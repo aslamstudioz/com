@@ -1,0 +1,9 @@
+ASLAM STUDIOZ - GITHUB SOURCE BACKUP
+Extract this ZIP. Upload the CONTENTS of GitHub-Source into a new GitHub repository.
+Includes homepage, styles, admin, API source, logos, camera images, schema and dependencies.
+
+IMPORTANT: This is the current Vinext / Cloudflare D1 + R2 / ChatGPT authentication source. Uploading it stores the code but DOES NOT publish a working GitHub Pages website. Firebase migration has not been implemented. Do not enable Pages against this source expecting it to run.
+
+Before GitHub Pages publication, replace server API calls with Firebase client operations, replace admin authentication, configure storage, produce a static build and add a deployment workflow. Test admin authorization, uploads and bookings first. Existing live database records and uploaded client photos are not in this archive.
+
+The previous Sites project identifier is omitted from this export. README includes historical platform instructions.
