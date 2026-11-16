@@ -1,0 +1,16 @@
+{
+  "name": "aslam-studioz-free",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "firebase": "12.19.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.0"
+  }
+}

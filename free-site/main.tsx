@@ -1,0 +1,1 @@
+import React from 'react';import {createRoot} from 'react-dom/client';import Home from './Home';import Admin from './Admin';import '../app/globals.css';createRoot(document.getElementById('root')!).render(location.pathname.replace(/\/$/,'').endsWith('/admin')?<Admin/>:<Home/>);
