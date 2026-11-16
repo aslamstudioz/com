@@ -1,0 +1,2 @@
+import {env} from 'cloudflare:workers';
+export async function GET(r:Request,{params}:{params:Promise<{id:string}>}){const {id}=await params;const p:any=await env.DB.prepare('SELECT key FROM photos WHERE id=?').bind(id).first();if(!p)return new Response('Not found',{status:404});const obj=await env.BUCKET.get(p.key);if(!obj)return new Response('Not found',{status:404});return new Response(obj.body,{headers:{'Content-Type':obj.httpMetadata?.contentType||'image/jpeg','Cache-Control':'public, max-age=3600','X-Content-Type-Options':'nosniff'}})}
