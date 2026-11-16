@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == 'aslamstudioz01@gmail.com';
+    }
+    match /albums/{id} {
+      allow read: if true;
+      allow write: if isOwner();
+    }
+    match /photos/{id} {
+      allow read: if true;
+      allow write: if isOwner();
+    }
+    match /settings/{id} {
+      allow read: if true;
+      allow write: if isOwner();
+    }
+    match /enquiries/{id} {
+      allow read, write: if isOwner();
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
